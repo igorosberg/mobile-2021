@@ -10,8 +10,8 @@ app.get('/produtos', (req, res) => {
   const produtos = [
     {
       id: '1',
-      produto: 'Bola',
-      descricao: 'Bola médiaAAA',
+      produto: 'BolaPPPP',
+      descricao: 'Bola médiaAAAA',
       img: 'https://imagepng.org/wp-content/uploads/2017/10/bola.png',
       botao: 'Comprar bola',
     },
