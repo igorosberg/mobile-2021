@@ -21,6 +21,7 @@ export default function Produtos(props) {
   var renderItem = ({ item }) => {
     return <Card
       navigation={props.navigation}
+      id={item.id}
       produto={item.produto}
       descricao={item.descricao}
       img={item.img}

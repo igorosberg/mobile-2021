@@ -8,7 +8,11 @@ export default function Card(props) {
       <View style={styles.card_description}>
         <Text>{props.produto}</Text>
         <Text>{props.descricao}</Text>
-        <Button title={props.botao} onPress={() => props.navigation.navigate('Produto')} />
+        <Button
+          title={props.botao}
+          onPress={() => props.navigation.navigate('Produto', {
+            idProduto: props.id,
+          })} />
       </View>
     </View>
   );

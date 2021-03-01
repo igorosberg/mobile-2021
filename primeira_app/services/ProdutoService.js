@@ -5,4 +5,9 @@ var getProdutos = async () => {
   return response.data;
 }
 
-export { getProdutos };
+var getProduto = async (id) => {
+  const response = await axios.get('http://192.168.100.4:3031/produtos/' + id);
+  return response.data;
+}
+
+export { getProdutos, getProduto };
