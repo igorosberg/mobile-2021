@@ -3,6 +3,8 @@ import { Text, View } from "react-native";
 
 import { getProduto } from '../services/ProdutoService';
 
+import Card from "../components/Card";
+
 export default function Produto(props) {
   const [produto, setProduto] = useState({});
 
@@ -15,9 +17,15 @@ export default function Produto(props) {
   });
 
   return <View>
-    <Text>Tela produto</Text>
-    <Text>{produto.id}</Text>
-    <Text>{produto.produto}</Text>
-    <Text>{produto.descricao}</Text>
+    {
+      produto.id && <Card
+      id={produto.id}
+      produto={produto.produto}
+      descricao={produto.descricao}
+      img={produto.img}
+      botao={produto.botao}
+      hideButton
+    />
+    }
   </View>
 }

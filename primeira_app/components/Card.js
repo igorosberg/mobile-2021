@@ -8,11 +8,13 @@ export default function Card(props) {
       <View style={styles.card_description}>
         <Text>{props.produto}</Text>
         <Text>{props.descricao}</Text>
-        <Button
+        {
+          !props.hideButton && <Button
           title={props.botao}
           onPress={() => props.navigation.navigate('Produto', {
             idProduto: props.id,
           })} />
+        }
       </View>
     </View>
   );
