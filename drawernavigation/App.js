@@ -54,7 +54,6 @@ export default function App() {
         initialRouteName="Home">
         <Drawer.Screen
           options={{
-            headerLeft: () => <Ionicons name="home-outline" size={25} color="#D4AF37" />,
             drawerIcon: ({ color, size }) => <Ionicons name="home-outline" color={color} size={size} />
           }}
           name="Home"
