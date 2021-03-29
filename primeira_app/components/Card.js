@@ -1,6 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 
+import { removerProduto } from '../services/ProdutoService';
+
 export default function Card(props) {
   return (
     <View style={styles.card}>
@@ -15,6 +17,10 @@ export default function Card(props) {
             idProduto: props.id,
           })} />
         }
+        <Button
+          title="Remover"
+          style={styles.botao_remover}
+          onPress={() => removerProduto(props.id)} />
       </View>
     </View>
   );
@@ -43,4 +49,8 @@ const styles = StyleSheet.create({
     height: 80,
     marginRight: 10,
   },
+  botao_remover: {
+    marginTop: 10,
+    color: '#FF0000',
+  }
 });
