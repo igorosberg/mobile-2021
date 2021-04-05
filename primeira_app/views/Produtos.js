@@ -1,6 +1,10 @@
 import { StatusBar } from "expo-status-bar";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, FlatList } from "react-native";
+
+import {
+  AdMobBanner,
+} from 'expo-ads-admob';
 
 import Card from "../components/Card";
 
@@ -16,7 +20,7 @@ export default function Produtos(props) {
       setProdutos(produtos);
     }
     loadContent();
-  });
+  },[]);
 
   var renderItem = ({ item }) => {
     return <Card
@@ -29,6 +33,8 @@ export default function Produtos(props) {
     />;
   }
 
+  var bannerError = (e) => {console.log(e)}
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -37,6 +43,11 @@ export default function Produtos(props) {
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
+      <AdMobBanner
+        bannerSize="fullBanner"
+        adUnitID="ca-app-pub-3940256099942544/6300978111" // Test ID, Replace with your-admob-unit-id
+        servePersonalizedAds // true or false
+        onDidFailToReceiveAdWithError={bannerError} />
     </View>
   );
 }
